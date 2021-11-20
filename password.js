@@ -1,5 +1,6 @@
 console.log("Welcome the password validation tool")
-console.log(`██████╗  █████╗ ███████╗███████╗██╗    ██╗ ██████╗ ██████╗ ██████╗ 
+console.log(`
+██████╗  █████╗ ███████╗███████╗██╗    ██╗ ██████╗ ██████╗ ██████╗ 
 ██╔══██╗██╔══██╗██╔════╝██╔════╝██║    ██║██╔═══██╗██╔══██╗██╔══██╗
 ██████╔╝███████║███████╗███████╗██║ █╗ ██║██║   ██║██████╔╝██║  ██║
 ██╔═══╝ ██╔══██║╚════██║╚════██║██║███╗██║██║   ██║██╔══██╗██║  ██║
@@ -65,19 +66,26 @@ reader.question("Please enter password to be validated: ", function(input){
     }
     if (hasLower){
         console.log("Your password has a lowercase letter.")
+    } else {
+        console.log("Your password needs a lowercase letter.")
     }
 	if (hasUpper){
         console.log("Your password has an uppercase letter.")
+    } else {
+        console.log("Your password needs an uppercase letter.")
     }
     if (hasNumber){
         console.log("Your password has a number.")
+    } else {
+        console.log("Your password needs a number.")
     }
     if (hasSpecialChar){
         console.log("Your password has a special character.")
+    } else {
+        console.log("Your password needs a special character.")
     }
-    
-
-	// This line closes the connection to the command line interface.
-	reader.close()
-
+    reader.question("Press <Enter> to clear the screen for security", function(input2){
+        console.clear()
+        reader.close()
+    })
 })
